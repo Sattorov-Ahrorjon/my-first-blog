@@ -1,0 +1,21 @@
+{% extends 'layouts/base.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %} Update {% endblock title %}
+
+{% block content %}
+<form method="post">
+    {% csrf_token %}
+    {{ form.media }}
+    {{ form|crispy }}
+    <button type="submit" class="btn btn-success">Save</button>
+</form>
+{% endblock content %}
+
+
+<!--Fayllar bilan ishlash uchun-->
+<!--<form method="post" enctype="multipart/form-data">-->
+<!--    {% csrf_token %}-->
+<!--    {{ form.as_p }}-->
+<!--    <button type="submit">Save</button>-->
+<!--</form>-->

@@ -1,0 +1,28 @@
+{% extends 'layouts/base.html' %}
+
+{% block title %} Detail {% endblock title %}
+
+
+{% block content %}
+
+<div>
+    <h2>
+        {{ article.title }}
+    </h2>
+    <!--    {% if article.photo %}-->
+    <!--    <img src="{{ article.photo.url }}" alt="{{ article.title }}">-->
+    <!--    {% endif %}-->
+    <div>
+        {{ article.body|safe }}
+    </div>
+    <br>
+    <div>
+        {{ article.author|title }}:{{ article.date }}
+    </div>
+</div>
+<div>
+    <a href="{% url 'name_article_update' article.pk %}" class="btn btn-success">Update article</a>
+    <a href="{% url 'name_article_delete' article.pk %}" class="btn btn-danger">Delete article</a>
+</div>
+
+{% endblock content %}

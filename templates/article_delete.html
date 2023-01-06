@@ -1,0 +1,15 @@
+{% extends 'layouts/base.html' %}
+
+{% block title %} Delete {% endblock title %}
+
+{% block content %}
+
+<div>
+    <form method="post">
+        {% csrf_token %}
+        <p> {{ article.title }} I will delete this article</p>
+        <button type="submit" class="btn btn-danger">Delete</button>
+    </form>
+</div>
+
+{% endblock content %}

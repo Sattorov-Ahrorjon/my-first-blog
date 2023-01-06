@@ -1,0 +1,16 @@
+{% extends 'layouts/base.html' %}
+
+{% block title %}Main page{% endblock title %}
+
+{% block content %}
+
+{% if user.is_authenticated %}
+<div>
+    <b>{{ user.username }}</b><br>
+    <h1 style="text-align:center;">Main page</h1>
+</div>
+{% else %}
+<h1 style="text-align:center;">Block page</h1>
+{% endif %}
+
+{% endblock content %}
